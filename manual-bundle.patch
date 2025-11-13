@@ -1,0 +1,11 @@
+--- yt_dlp_ejs-0.3.1/pyproject.toml.orig	2020-02-02 01:00:00.000000000 +0100
++++ yt_dlp_ejs-0.3.1/pyproject.toml	2025-11-13 20:16:01.120886579 +0100
+@@ -56,8 +56,6 @@
+ [tool.hatch.build.hooks.vcs]
+ version-file = "yt_dlp_ejs/_version.py"
+ 
+-[tool.hatch.build.targets.wheel.hooks.custom]
+-
+ [tool.ruff.lint]
+ select = [
+   "C4",
