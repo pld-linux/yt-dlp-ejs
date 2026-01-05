@@ -6,15 +6,12 @@ License:	Unlicense
 Group:		Applications
 Source0:	https://github.com/yt-dlp/ejs/releases/download/%{version}/yt_dlp_ejs-%{version}.tar.gz
 # Source0-md5:	7001eea74deef76530524aa29741186e
-# tar -xf yt_dlp_ejs-%{version}.tar.gz
-# npm -C yt_dlp_ejs-%{version} install --ignore-scripts --cpu noarch --no-audit --no-fund --no-update-check
-# find yt_dlp_ejs-%{version}/node_modules -type d -name prebuilds -prune -exec rm -r {} +
-# tar -C yt_dlp_ejs-%{version} -acf yt-dlp-ejs-node_modules-%{version}.tar.xz node_modules
-Source1:	%{name}-node_modules-%{version}.tar.xz
-# Source1-md5:	08b224446bd6dbe690d2a9ccec33a792
+Source1:	https://github.com/yt-dlp/ejs/releases/download/%{version}/yt.solver.core.min.js
+# Source1-md5:	01dd51093cd5140ab4a829e9f2a77c17
+Source2:	https://github.com/yt-dlp/ejs/releases/download/%{version}/yt.solver.lib.min.js
+# Source2-md5:	7fbcfdf209230f48e7a5ce656ba9bfda
 Patch0:		manual-bundle.patch
 URL:		https://github.com/yt-dlp/ejs
-BuildRequires:	nodejs
 BuildRequires:	python3 >= 1:3.10
 BuildRequires:	python3-build
 BuildRequires:	python3-hatch-vcs
@@ -42,21 +39,19 @@ Suggests:	nodejs
 External JavaScript for yt-dlp supporting many runtimes.
 
 %prep
-%setup -q -n yt_dlp_ejs-%{version} -a1
+%setup -q -n yt_dlp_ejs-%{version}
 %patch -P0 -p1
 
 %build
 %py3_build_pyproject
-
-node ./node_modules/.bin/rollup -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %py3_install_pyproject
 
-cp -p dist/yt.solver.core.min.js $RPM_BUILD_ROOT%{py3_sitescriptdir}/yt_dlp_ejs/yt/solver/core.min.js
-cp -p dist/yt.solver.lib.min.js $RPM_BUILD_ROOT%{py3_sitescriptdir}/yt_dlp_ejs/yt/solver/lib.min.js
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{py3_sitescriptdir}/yt_dlp_ejs/yt/solver/core.min.js
+cp -p %{SOURCE2} $RPM_BUILD_ROOT%{py3_sitescriptdir}/yt_dlp_ejs/yt/solver/lib.min.js
 
 %clean
 rm -rf $RPM_BUILD_ROOT
