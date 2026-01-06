@@ -23,7 +23,6 @@ BuildRequires:	rpmbuild(macros) >= 2.044
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildArch:	noarch
-ExclusiveArch:	%{ix86} %{x86_64} %{armv7} %{armv8} aarch64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
