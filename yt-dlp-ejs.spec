@@ -1,4 +1,5 @@
 Summary:	External JavaScript for yt-dlp supporting many runtimes
+Summary(pl.UTF-8):	Zewnętrzny JavaScript dla yt-dlp obsługujący wiele bibliotek
 Name:		yt-dlp-ejs
 Version:	0.3.2
 Release:	1
@@ -28,14 +29,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 External JavaScript for yt-dlp supporting many runtimes.
 
+%description -l pl.UTF-8
+Zewnętrzny JavaScript dla yt-dlp obsługujący wiele bibliotek
+uruchomieniowych.
+
 %package -n python3-yt-dlp-ejs
 Summary:	External JavaScript for yt-dlp supporting many runtimes
+Summary(pl.UTF-8):	Zewnętrzny JavaScript dla yt-dlp obsługujący wiele bibliotek
 Group:		Libraries/Python
 Requires:	python3-modules >= 1:3.10
 Suggests:	nodejs
 
 %description -n python3-yt-dlp-ejs
 External JavaScript for yt-dlp supporting many runtimes.
+
+%description -n python3-yt-dlp-ejs -l pl.UTF-8
+Zewnętrzny JavaScript dla yt-dlp obsługujący wiele bibliotek
+uruchomieniowych.
 
 %prep
 %setup -q -n yt_dlp_ejs-%{version}
