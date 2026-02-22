@@ -1,14 +1,14 @@
 Summary:	External JavaScript for yt-dlp supporting many runtimes
 Summary(pl.UTF-8):	Zewnętrzny JavaScript dla yt-dlp obsługujący wiele bibliotek
 Name:		yt-dlp-ejs
-Version:	0.3.2
+Version:	0.5.0
 Release:	1
 License:	Unlicense
 Group:		Applications
 Source0:	https://github.com/yt-dlp/ejs/releases/download/%{version}/yt_dlp_ejs-%{version}.tar.gz
-# Source0-md5:	c747998b5635added22ec93abea12475
+# Source0-md5:	f2d514c17aa1730aed740d67eac8b49d
 Source1:	https://github.com/yt-dlp/ejs/releases/download/%{version}/yt.solver.core.min.js
-# Source1-md5:	01dd51093cd5140ab4a829e9f2a77c17
+# Source1-md5:	ce79d744c58483e004bcb24680fea05d
 Source2:	https://github.com/yt-dlp/ejs/releases/download/%{version}/yt.solver.lib.min.js
 # Source2-md5:	7fbcfdf209230f48e7a5ce656ba9bfda
 Patch0:		manual-bundle.patch
